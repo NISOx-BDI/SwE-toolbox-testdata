@@ -15,12 +15,14 @@
 	load('SwE.mat');
 	swe_cp(SwE);
 
-	% Define a T contrast.
-	xCon(1).c = [1, 0, 0];
-	xCon(1).STAT = 'T';
-	xCon(1).Vspm = ''
-
-	% Run contrasts.
-	load('SwE.mat');
+	% Define a contrast.
+	load('xCon.mat');
 	SwE.xCon = xCon;
+    save('SwE.mat', 'SwE');
+    
+    % Run swe_getSPM()
+    swe_getSPM();
+    
+    
+
 
